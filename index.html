@@ -1,0 +1,69 @@
+<!doctype html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <link rel="stylesheet" href="style.css" />
+    <link
+      rel="stylesheet"
+      href="https://cdnjs.cloudflare.com/ajax/libs/remixicon/4.6.0/remixicon.css"
+    />
+    <title>three-glsl</title>
+  </head>
+  <body>
+    <div
+      class="app w-full h-screen flex text-white font-['helvetica_now_display'] bg-zinc-900"
+    >
+      <div class="w-1/2 h-screen relative canvas">
+        <!-- <a href="" class="text-2xl opacity-60 font-base fixed top-10 right-10"
+          >close menu <i class="ri-close-large-fill"></i
+        ></a> -->
+        <div
+          class="images w-[25vw] h-[32vw] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+        >
+          <img
+            src="/first.jpg"
+            class="w-full h-full object-cover absolute opacity-0"
+          />
+          <img
+            src="/second.jpg"
+            class="w-full h-full object-cover absolute opacity-0"
+          />
+          <img
+            src="/third.jpg"
+            class="w-full h-full object-cover absolute opacity-0"
+          />
+          <img
+            src="/fourth.jpg"
+            class="w-full h-full object-cover absolute opacity-0"
+          />
+        </div>
+      </div>
+      <div class="w-1/2 h-screen flex items-center justify-center">
+        <div class="links flex flex-col gap-10 text-white">
+          <a
+            href="/"
+            class="lowercase transition-all hover:ml-5 opacity-30 hover:opacity-100 block tracking-tighter text-6xl"
+            ><small class="text-xl tracking-normal">01.</small> character - 1</a
+          >
+          <a
+            href="/"
+            class="lowercase transition-all hover:ml-5 opacity-30 hover:opacity-100 block tracking-tighter text-6xl"
+            ><small class="text-xl tracking-normal">02.</small> character - 2</a
+          >
+          <a
+            href="/"
+            class="lowercase transition-all hover:ml-5 opacity-30 hover:opacity-100 block tracking-tighter text-6xl"
+            ><small class="text-xl tracking-normal">03.</small> character - 3</a
+          >
+          <a
+            href="/"
+            class="lowercase transition-all hover:ml-5 opacity-30 hover:opacity-100 block tracking-tighter text-6xl"
+            ><small class="text-xl tracking-normal">04.</small> character - 4</a
+          >
+        </div>
+      </div>
+    </div>
+    <script type="module" src="/src/main.js"></script>
+  </body>
+</html>
