@@ -12,54 +12,65 @@
   </head>
   <body>
     <div
-      class="app w-full h-screen flex text-white font-['helvetica_now_display'] bg-zinc-900"
+      class="app w-full h-screen flex flex-col md:flex-row text-white font-['helvetica_now_display'] bg-zinc-900 overflow-hidden"
     >
-      <div class="w-1/2 h-screen relative canvas">
-        <!-- <a href="" class="text-2xl opacity-60 font-base fixed top-10 right-10"
+      <div class="w-full h-1/2 md:w-1/2 md:h-screen relative canvas z-10">
+        <a
+          href=""
+          class="text-lg md:text-2xl opacity-60 font-base absolute md:fixed top-5 right-5 md:top-10 md:right-10 z-20"
           >close menu <i class="ri-close-large-fill"></i
-        ></a> -->
+        ></a>
         <div
-          class="images w-[25vw] h-[32vw] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
+          class="images w-[50vw] h-[65vw] sm:w-[40vw] sm:h-[50vw] md:w-[25vw] md:h-[32vw] absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2"
         >
           <img
             src="/first.jpg"
-            class="w-full h-full object-cover absolute opacity-0"
+            class="w-full h-full object-cover absolute opacity-0 pointer-events-none"
           />
           <img
             src="/second.jpg"
-            class="w-full h-full object-cover absolute opacity-0"
+            class="w-full h-full object-cover absolute opacity-0 pointer-events-none"
           />
           <img
             src="/third.jpg"
-            class="w-full h-full object-cover absolute opacity-0"
+            class="w-full h-full object-cover absolute opacity-0 pointer-events-none"
           />
           <img
             src="/fourth.jpg"
-            class="w-full h-full object-cover absolute opacity-0"
+            class="w-full h-full object-cover absolute opacity-0 pointer-events-none"
           />
         </div>
       </div>
-      <div class="w-1/2 h-screen flex items-center justify-center">
-        <div class="links flex flex-col gap-10 text-white">
+
+      <div
+        class="w-full h-1/2 md:w-1/2 md:h-screen flex items-center justify-center z-20 relative"
+      >
+        <div
+          class="links flex flex-col gap-6 md:gap-10 text-white px-8 md:px-0"
+        >
           <a
             href="/"
-            class="lowercase transition-all hover:ml-5 opacity-30 hover:opacity-100 block tracking-tighter text-6xl"
-            ><small class="text-xl tracking-normal">01.</small> character - 1</a
+            class="lowercase transition-all hover:translate-x-5 opacity-30 hover:opacity-100 block tracking-tighter text-4xl sm:text-5xl md:text-6xl"
+            ><small class="text-sm md:text-xl tracking-normal mr-2">01.</small>
+            Character - 1</a
           >
           <a
             href="/"
-            class="lowercase transition-all hover:ml-5 opacity-30 hover:opacity-100 block tracking-tighter text-6xl"
-            ><small class="text-xl tracking-normal">02.</small> character - 2</a
+            class="lowercase transition-all hover:translate-x-5 opacity-30 hover:opacity-100 block tracking-tighter text-4xl sm:text-5xl md:text-6xl"
+            ><small class="text-sm md:text-xl tracking-normal mr-2">02.</small>
+            Character - 2</a
           >
           <a
             href="/"
-            class="lowercase transition-all hover:ml-5 opacity-30 hover:opacity-100 block tracking-tighter text-6xl"
-            ><small class="text-xl tracking-normal">03.</small> character - 3</a
+            class="lowercase transition-all hover:translate-x-5 opacity-30 hover:opacity-100 block tracking-tighter text-4xl sm:text-5xl md:text-6xl"
+            ><small class="text-sm md:text-xl tracking-normal mr-2">03.</small>
+            Character - 3</a
           >
           <a
             href="/"
-            class="lowercase transition-all hover:ml-5 opacity-30 hover:opacity-100 block tracking-tighter text-6xl"
-            ><small class="text-xl tracking-normal">04.</small> character - 4</a
+            class="lowercase transition-all hover:translate-x-5 opacity-30 hover:opacity-100 block tracking-tighter text-4xl sm:text-5xl md:text-6xl"
+            ><small class="text-sm md:text-xl tracking-normal mr-2">04.</small>
+            Character - 4</a
           >
         </div>
       </div>

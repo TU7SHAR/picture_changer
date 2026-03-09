@@ -25,9 +25,15 @@ class Site {
     this.camera.fov = 2 * Math.atan(this.height / 2 / 200) * (180 / Math.PI);
 
     this.renderer = new THREE.WebGLRenderer({ antialias: true, alpha: true });
-    this.renderer.setPixelRatio(window.devicePixelRatio);
+    this.renderer.setPixelRatio(Math.min(window.devicePixelRatio, 2));
     this.renderer.setSize(this.width, this.height);
-    this.container.appendChild(this.renderer.domElement);
+
+    this.renderer.domElement.style.position = "absolute";
+    this.renderer.domElement.style.top = "0";
+    this.renderer.domElement.style.left = "0";
+    this.renderer.domElement.style.zIndex = "15";
+    this.renderer.domElement.style.pointerEvents = "none";
+    document.body.appendChild(this.renderer.domElement);
 
     this.addImages();
     this.resize();
@@ -38,10 +44,11 @@ class Site {
   }
 
   resize() {
-    this.width = this.container.offsetWidth;
-    this.height = this.container.offsetHeight;
+    this.width = window.innerWidth;
+    this.height = window.innerHeight;
     this.renderer.setSize(this.width, this.height);
     this.camera.aspect = this.width / this.height;
+    this.camera.fov = 2 * Math.atan(this.height / 2 / 200) * (180 / Math.PI);
     this.camera.updateProjectionMatrix();
     this.setPosition();
   }
@@ -55,6 +62,7 @@ class Site {
       const bounds = img.img.getBoundingClientRect();
       img.mesh.position.y = -bounds.top + this.height / 2 - bounds.height / 2;
       img.mesh.position.x = bounds.left - this.width / 2 + bounds.width / 2;
+      img.mesh.scale.set(bounds.width, bounds.height, 1);
     });
   }
 
@@ -80,10 +88,12 @@ class Site {
       transparent: true,
     });
 
+    const geometry = new THREE.PlaneGeometry(1, 1);
+
     this.images.forEach((img) => {
       const bounds = img.getBoundingClientRect();
-      const geometry = new THREE.PlaneGeometry(bounds.width, bounds.height);
       const mesh = new THREE.Mesh(geometry, this.material);
+      mesh.scale.set(bounds.width, bounds.height, 1);
 
       this.scene.add(mesh);
       this.imageStore.push({
